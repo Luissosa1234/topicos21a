@@ -219,7 +219,8 @@
                                     <i class="nav-icon fa fa-credit-card "></i>
                                     <p>
                                         Clientes
-                                        
+                                        <?php use App\Models\Cliente; $clientes_count = Cliente::all()->count(); ?>
+                                        <span class="right badge badge-danger">{{ $clientes_count ?? '0' }}</span>
                                     </p>
                                 </a>
                             </li>
@@ -232,7 +233,8 @@
                                     
                                     <p>
                                         Proveedores
-                                        
+                                        <?php use App\Models\Proveedor; $provedors_count = Proveedor::all()->count(); ?>
+                                        <span class="right badge badge-danger">{{ $provedors_count ?? '0' }}</span>
                                         {{-- <span class="right badge badge-danger">{{ $proveedores_count ?? '0' }}</span> --}}
                                     </p>
                                 </a>
@@ -244,6 +246,8 @@
                                     <i class="nav-icon fas fa fa-boxes "></i>
                                     <p>
                                         Productos
+                                        <?php use App\Models\Producto; $productos_count = Producto::all()->count(); ?>
+                                        <span class="right badge badge-danger">{{ $productos_count ?? '0' }}</span>
                                     </p>
                                 </a>
                             </li>
@@ -254,6 +258,8 @@
                                     <i class="nav-icon  fas fa-shopping-cart"></i>
                                     <p>
                                         Ventas
+                                        <?php use App\Models\Venta; $Ventas_count = Venta::all()->count(); ?>
+                                        <span class="right badge badge-danger">{{ $Ventas_count ?? '0' }}</span>
                                     </p>
                                 </a>
                             </li>

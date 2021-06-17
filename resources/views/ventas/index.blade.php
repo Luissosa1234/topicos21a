@@ -2,15 +2,15 @@
 
 @section('content')
 <div class="container">
- <h2>Lista de Proveedores <a href="usuarios/create"> <button type="button" class="btn btn-success float-right">Agregar Proveedor</button></a> </h2> 
+ <h2>Lista de Ventas <a href="usuarios/create"> <button type="button" class="btn btn-success float-right">Agregar Proveedor</button></a> </h2> 
 <table class="table table-hover">
     <thead>
   <tr>
     <th scope="col">id</th>
     <th scope="col">Nombre</th>
-    <th scope="col">Correo</th>
-    <th scope="col">Telefono</th>
-    <th scope="col">Dirección</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Precio</th>
+    <th scope="col">Fecha</th>
     <th scope="col">Acciones</th>
      </tr>
 </thead>
@@ -19,9 +19,9 @@
   <tr>
     <th scope="row">{{$venta->id}}</th>
     <td>{{$venta->nombre}}</td>
-    <td>{{$venta->correo}}</td>
-    <td>{{$venta->telefono}}</td>
-    <td>{{$venta->direccion}}</td>
+    <td>{{$venta->cantidad}}</td>
+    <td>{{$venta->precio}}</td>
+    <td> {{ $venta->created_at->format('d-m-y')}}</td>
     <td>
       <button type="button" class="btn btn-primary">Editar</button>
       <button type="button" class="btn btn-danger">Eliminar</button>

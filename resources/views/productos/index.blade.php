@@ -2,15 +2,18 @@
 
 @section('content')
 <div class="container">
- <h2>Lista de Proveedores <a href="usuarios/create"> <button type="button" class="btn btn-success float-right">Agregar Proveedor</button></a> </h2> 
+ <h2>Lista de Productos <a href="usuarios/create"> <button type="button" class="btn btn-success float-right">Agregar Proveedor</button></a> </h2> 
 <table class="table table-hover">
     <thead>
   <tr>
     <th scope="col">id</th>
     <th scope="col">Nombre</th>
-    <th scope="col">Correo</th>
-    <th scope="col">Telefono</th>
-    <th scope="col">Dirección</th>
+    <th scope="col">Precio</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Departamento</th>
+    <th scope="col">Descripción</th>
+    <th scope="col">Registro</th>
+    <th scope="col">Actualizacion</th>
     <th scope="col">Acciones</th>
      </tr>
 </thead>
@@ -19,9 +22,12 @@
   <tr>
     <th scope="row">{{$producto->id}}</th>
     <td>{{$producto->nombre}}</td>
-    <td>{{$producto->correo}}</td>
-    <td>{{$producto->telefono}}</td>
-    <td>{{$producto->direccion}}</td>
+    <td>{{$producto->precio}} $</td>
+    <td>{{$producto->cantidad}}</td>
+    <td>{{$producto->departamento}}</td>
+    <td>{{$producto->descripcion}}</td>
+    <td> {{ $producto->created_at->format('d-m-y')}}</td>
+    <td> {{ $producto->updated_at->format('d-m-y')}}</td>
     <td>
       <button type="button" class="btn btn-primary">Editar</button>
       <button type="button" class="btn btn-danger">Eliminar</button>
@@ -31,3 +37,4 @@
 </tbody>
 
 </table>
+@endsection

@@ -16,9 +16,8 @@ class CreateVentasTable extends Migration
         Schema::create('ventas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 500)->nullable();
-            $table->string('correo', 500)->nullable();
-            $table->string('telefono', 500)->nullable();
-            $table->string('direccion', 500)->nullable();
+            $table->integer('cantidad')->unsigned()->nullable()->default(12);
+            $table->float('precio')->nullable()->default(123.45);
             $table->timestamps();
         });
     }
