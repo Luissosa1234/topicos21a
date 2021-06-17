@@ -44,8 +44,8 @@
                 <ul class="navbar-nav ml-auto">
                   
 
-                        <a class="nav-link "  href="{{route('register')}}">
-                            <i>Registrar</i>
+                        <a class="nav-link btn btn-primary text-white"  href="/">
+                            <i>Regresar</i> </a>
                     
                 </ul>
                </nav>

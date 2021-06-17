@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-  <h2>Lista de Clientes <a href="usuarios/create"> <button type="button" class="btn btn-success float-right">Agregar Proveedor</button></a> </h2> 
+  <h2>Lista de Clientes <a href="clientes/create"> <button type="button" class="btn btn-success float-right">Agregar Cliente</button></a> </h2> 
 <table class="table table-hover">
     <thead>
   <tr>

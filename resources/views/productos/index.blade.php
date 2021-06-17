@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
- <h2>Lista de Productos <a href="usuarios/create"> <button type="button" class="btn btn-success float-right">Agregar Proveedor</button></a> </h2> 
+ <h2>Lista de Productos <a href="productos/create"> <button type="button" class="btn btn-success float-right">Agregar Producto</button></a> </h2> 
 <table class="table table-hover">
     <thead>
   <tr>
@@ -32,9 +32,10 @@
       <button type="button" class="btn btn-primary">Editar</button>
       <button type="button" class="btn btn-danger">Eliminar</button>
     </td>
-  </tr>
-  @endforeach
-</tbody>
+    </tr>
+     @endforeach
+     </tbody>
+    </table>
+ </div>
 
-</table>
 @endsection

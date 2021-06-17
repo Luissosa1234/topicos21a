@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Requests\StorePostPost;
 
 class UserController extends Controller
 {
@@ -33,9 +34,10 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostPost $request)
     {
         //
+        echo "hola mundo: ".$request->input('nombre');
     }
 
     /**
