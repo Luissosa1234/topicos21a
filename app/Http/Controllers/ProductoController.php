@@ -15,7 +15,12 @@ class ProductoController extends Controller
     public function index(){
         //$clientes = Cliente::all();
         //return view('clientes.index',['clientes' => $clientes]);
-        return view('productos.index');
+        // return view('productos.index');
+
+        $productos = producto::get();
+        // $proveedor = Proveedor::all();
+        // return view('proveedores.index',['proveedor' => $proveedor]);
+        return view('productos.index',['productos'=>$productos]);
     }
 
     /**

@@ -13,9 +13,11 @@ class VentaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        //$clientes = Cliente::all();
-        //return view('clientes.index',['clientes' => $clientes]);
-        return view('ventas.index');
+        $ventas = Venta::get();
+        // $proveedor = Proveedor::all();
+        // return view('proveedores.index',['proveedor' => $proveedor]);
+        return view('ventas.index',['ventas'=>$ventas]);
+        // return view('proveedores.index');
     }
 
     /**

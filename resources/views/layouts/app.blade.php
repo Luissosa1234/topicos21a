@@ -53,8 +53,11 @@
                     </div>
                 </form>
 
+
+                {{-- SE QUITAN LOS MENSAJITOS CULEROS QUE APARECEN DE LADO IZQUIERDO --}}
+                
                 <!-- Right navbar links -->
-                <ul class="navbar-nav ml-auto">
+                {{-- <ul class="navbar-nav ml-auto">
                     <!-- Messages Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -146,7 +149,7 @@
                             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                         </div>
                     </li>
-                </ul>
+                </ul> --}}
             </nav>
             <!-- /.navbar -->
 
@@ -169,10 +172,10 @@
                         <div class="info">
                             <a href="#" class="d-block">
                                 @guest
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                                 @else
                                 {{ Auth::user()->name }}
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="dropdown-item text-white b-1x" href="{{ route('logout') }}" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                                     Cerrar Sesión
                                 </a>
@@ -213,7 +216,7 @@
                             <li class="nav-item">
                                 <a href="clientes"
                                     class="{{ Request::path() === 'clientes' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-users"></i>
+                                    <i class="nav-icon fa fa-credit-card "></i>
                                     <p>
                                         Clientes
                                         
@@ -224,10 +227,12 @@
                             <li class="nav-item">
                                 <a href="proveedores"
                                     class="{{ Request::path() === 'proveedores' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-users"></i>
+                                    
+                                    <i class="nav-icon  far fa-handshake "></i>
+                                    
                                     <p>
                                         Proveedores
-                                        {{-- <?php use App\Models\Proveedor; $proveedores_count = Proveedor::all()->count(); ?> --}}
+                                        
                                         {{-- <span class="right badge badge-danger">{{ $proveedores_count ?? '0' }}</span> --}}
                                     </p>
                                 </a>
@@ -236,7 +241,7 @@
                             <li class="nav-item">
                                 <a href="productos"
                                     class="{{ Request::path() === 'productos' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-"></i>
+                                    <i class="nav-icon fas fa fa-boxes "></i>
                                     <p>
                                         Productos
                                     </p>
@@ -246,7 +251,7 @@
                             <li class="nav-item">
                                 <a href="ventas"
                                     class="{{ Request::path() === 'ventas' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-"></i>
+                                    <i class="nav-icon  fas fa-shopping-cart"></i>
                                     <p>
                                         Ventas
                                     </p>
