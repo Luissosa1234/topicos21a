@@ -58,3 +58,9 @@ Route::get('/usuarios', function () {
     return view('usuarios');
 });
 */
+
+Route::resource('usuarios', UserController::class);
+Route::resource('clientes', ClienteController::class);
+Route::resource('productos', ProductoController::class);
+Route::resource('proveedores', ProveedorController::class);
+Route::resource('ventas', VentasController::class);

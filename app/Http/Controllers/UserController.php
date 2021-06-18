@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Requests\StorePostPost;
+use App\Http\Requests\StoreUserPost;
 
 class UserController extends Controller
 {
@@ -34,10 +34,16 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostPost $request)
+    public function store(StoreUserPost $request)
     {
         //
-        echo "hola mundo: ".$request->input('nombre');
+        echo "hola mundo: ".$request->input('name');
+        echo "hola mundo: ".$request->input('email');
+        echo "hola mundo: ".$request->input('password');
+
+        User::create($request->validated());
+
+        return back()->with('status', 'USUARIO CREADO CON EXITO');
     }
 
     /**
