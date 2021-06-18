@@ -13,7 +13,7 @@ class StoreProveedorPost extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreProveedorPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nombre'=> 'required|min:5|max:500',
+            'correo'=> 'required|min:5|max:500',
+            'telefono'=> 'required|min:5|max:500',
+            'direccion'=> 'required|min:5|max:500'
         ];
     }
 }

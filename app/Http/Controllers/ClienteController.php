@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Cliente;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreClientePost;
 
 class ClienteController extends Controller
 {
@@ -35,9 +36,16 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClientePost $request)
     {
-        //
+        echo "hola mundo: ".$request->input('nombre');
+        echo "hola mundo: ".$request->input('correo');
+        echo "hola mundo: ".$request->input('telefono');
+        echo "hola mundo: ".$request->input('direccion');
+
+        Cliente::create($request->validated());
+
+        return back()->with('status', 'CLIENTE CREADO CON EXITO');
     }
 
     /**

@@ -24,7 +24,9 @@ class StoreVentaPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nombre'=> 'required|min:5|max:50',
+            'cantidad' => '',
+            'precio'=> ''
         ];
     }
 }

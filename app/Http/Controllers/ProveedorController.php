@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Proveedor;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreProveedorPost;
 
 class ProveedorController extends Controller
 {
@@ -38,9 +39,16 @@ class ProveedorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProveedorPost $request)
     {
-        //
+        echo "hola mundo: ".$request->input('nombre');
+        echo "hola mundo: ".$request->input('correo');
+        echo "hola mundo: ".$request->input('telefono');
+        echo "hola mundo: ".$request->input('direccion');
+
+        Proveedor::create($request->validated());
+
+        return back()->with('status', 'PROVEEDOR CREADO CON EXITO');
     }
 
     /**

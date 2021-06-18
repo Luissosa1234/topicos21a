@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Venta;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreVentaPost;
 
 class VentaController extends Controller
 {
@@ -36,9 +37,17 @@ class VentaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreVentaPost $request)
     {
-        //
+        echo "hola mundo: ".$request->input('nombre');
+        echo "hola mundo: ".$request->input('cantidad');
+        echo "hola mundo: ".$request->input('precio');
+  
+        
+
+        Venta::create($request->validated());
+
+        return back()->with('status', 'VENTA REGISTRADA CON EXITO');
     }
 
     /**

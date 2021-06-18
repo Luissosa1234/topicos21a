@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Producto;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductoPost;
 
 class ProductoController extends Controller
 {
@@ -30,7 +31,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        return view('productos.create');
     }
 
     /**
@@ -39,9 +40,18 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductoPost $request)
     {
-        //
+        echo "hola mundo: ".$request->input('nombre');
+        echo "hola mundo: ".$request->input('precio');
+        echo "hola mundo: ".$request->input('cantidad');
+        echo "hola mundo: ".$request->input('departamento');
+        echo "hola mundo: ".$request->input('descripcion');
+        
+
+        Producto::create($request->validated());
+
+        return back()->with('status', 'PRODUCTO CON EXITO');
     }
 
     /**
