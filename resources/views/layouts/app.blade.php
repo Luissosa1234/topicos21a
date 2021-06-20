@@ -27,8 +27,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div id="app">
+<body class="hold-transition sidebar-mini layout-fixed" >
+    <div id="app" >
         <div class="wrapper">
 
             <!-- Navbar -->
@@ -272,7 +272,7 @@
             </aside>
 
             <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
+            <div class="content-wrapper" style="background-image: url('/dist/img/fondo.jpg')">
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
 
@@ -280,7 +280,7 @@
                 <!-- /.content-header -->
 
                 <!-- Main content -->
-                <section class="content">
+                <section class="content" >
                     @yield('content')
                 </section>
                 <!-- /.content -->

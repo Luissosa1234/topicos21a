@@ -1,11 +1,12 @@
 @extends('layouts.pLogin')
+{{-- <img src="https://i.pinimg.com/originals/d7/e1/72/d7e1725b3801fb6cdeb212884c893f79.jpg" alt=""> --}}
 
-@section('content')
-<div class="container">
+@section('content' )
+<div class="container"  >
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('INICIAR SESION') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -50,21 +51,40 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                       
+                        <div class="row justify-content-center ">
+                        <div class="form-group">
+                            <div class="">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('ENTRAR') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
+                           
+                            
                         </div>
+                        <div>
+                            <a class="btn btn-success ml-2" href="{{route('register')}}">
+    
+                                REGISTRO
+                                 </a>
+                        </div>
+                        
+                        </div>
+                     
                     </form>
+                         
+                    @if (Route::has('password.request'))
+                        <a style="width: 200px" class="btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Olvidaste la contraseña?') }}
+                        </a>
+                        @endif
+                    
+                
+                    
+                    
+                       
+                    
+
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container p-3 rounded" style="background-color: white ">
  <h2>Lista de Productos <a href="productos/create"> <button type="button" style="width: 150px;" class="btn btn-outline-success float-right">Agregar Producto</button></a> </h2> 
 <table class="table table-hover">
     <thead>

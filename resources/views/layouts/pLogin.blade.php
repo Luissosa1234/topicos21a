@@ -27,7 +27,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" >
     <div id="app">
         <div class="wrapper">
 
@@ -44,15 +44,13 @@
                 <ul class="navbar-nav ml-auto">
                   
 
-                        <a class="nav-link "  href="{{route('register')}}">
-                            <i>Registrar</i>
                     
                 </ul>
                </nav>
            
 
             <!-- Main Sidebar Container -->
-            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <aside class="main-sidebar sidebar-dark-primary elevation-4" >
                 <!-- Brand Logo -->
                 <a href="{{ url('/') }}" class="brand-link">
                     <img src="/dist/img/udg.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -61,9 +59,9 @@
                 </a>
 
                 <!-- Sidebar -->
-                <div class="sidebar">
+                <div class="sidebar" >
                     <!-- Sidebar user panel (optional) -->
-                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex" >
                         <div class="image">
                             <img src="/dist/img/estadisticas.png" class="img-circle elevation-2" alt="User Image">
                         </div>
@@ -108,7 +106,7 @@
             </aside>
 
             <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
+            <div class="content-wrapper" style="background-image: url('/dist/img/fondo.jpg')">
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
 

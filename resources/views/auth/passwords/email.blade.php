@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pLogin')
 
 @section('content')
 <div class="container">
@@ -33,8 +33,8 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                <button style="width: 200px" type="submit" class="btn btn-primary">
+                                    {{ __('RECUPERAR PASSWORD') }}
                                 </button>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container p-3 rounded" style="background-color: white ">
   
  <h2>Lista de Usuarios <a href="usuarios/create"> <button type="button" style="width: 150px;" class="btn btn-outline-success float-right">Agregar usuario</button></a> </h2> 
 <table class="table table-hover">

@@ -64,10 +64,16 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                <button style="width: 120px" type="submit" class="btn btn-primary">
+                                    {{ __('REGISTRAR') }}
                                 </button>
+                                <a style="width: 120px" class="btn btn-danger" href="{{route('login')}}">
+                                    REGRESAR
+                                </a>
+                            
                             </div>
+                            
+                                
                         </div>
                     </form>
                 </div>
