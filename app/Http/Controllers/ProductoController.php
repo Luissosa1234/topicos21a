@@ -104,6 +104,10 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Producto::find($id);
+
+        $producto->delete();
+        
+        return back()->with('status', 'CLIENTE ELIMINADO CON EXITO');
     }
 }

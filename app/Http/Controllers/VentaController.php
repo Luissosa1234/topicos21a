@@ -98,6 +98,10 @@ class VentaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $venta = Venta::find($id);
+
+        $venta->delete();
+        
+        return back()->with('status', 'VENTA ELIMINADA CON EXITO');
     }
 }

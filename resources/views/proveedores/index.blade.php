@@ -22,14 +22,33 @@
     <td>{{$proveedor->correo}}</td>
     <td>{{$proveedor->telefono}}</td>
     <td>{{$proveedor->direccion}}</td>
-    <td>
-      <a href="{{ route('proveedores.show',$proveedor->id)}}" class="btn btn-secondary">Ver</a>
+    
+     
+
+      <td class="row align-items-start p-1">
+
+      
+        <a href="{{ route('proveedores.show',$proveedor->id)}}" >
+          <button class="btn btn-secondary">
+            Ver
+          </button>
+        </a>
+
+
 
       <a href="{{ route('proveedores.edit',$proveedor->id)}}">
         <button class="btn btn-primary ml-2">
           Actualizar
         </button>
         </a>
+
+
+        <form action="{{route('proveedores.destroy', $proveedor ->id)}}" method="post">
+          @method('DELETE')
+          @csrf
+          <button type="submit" class="btn btn-danger ml-2">Eliminar</button>
+        </form>
+  
     </td>
   </tr>
   @endforeach

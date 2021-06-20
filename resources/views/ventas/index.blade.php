@@ -22,14 +22,32 @@
     <td>{{$venta->cantidad}}</td>
     <td>{{$venta->precio}}</td>
     <td> {{ $venta->created_at->format('d-m-y')}}</td>
-    <td>
-      <a href="{{ route('ventas.show',$venta->id)}}" class="btn btn-secondary">Ver</a>
+      
+
+        {{-- botones --}}
+    <td class="row align-items-start p-1">
+
+      
+      <a href="{{ route('ventas.show',$venta->id)}}" >
+        <button class="btn btn-secondary">
+          Ver
+        </button>
+      </a>
+        
 
       <a href="{{ route('ventas.edit',$venta->id)}}">
         <button class="btn btn-primary ml-2">
           Actualizar
         </button>
         </a>
+
+
+        <form action="{{route('ventas.destroy', $venta ->id)}}" method="post">
+          @method('DELETE')
+          @csrf
+          <button type="submit" class="btn btn-danger ml-2">Eliminar</button>
+        </form>
+  
             
     </td>
   </tr>

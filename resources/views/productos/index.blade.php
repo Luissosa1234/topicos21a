@@ -28,9 +28,21 @@
     <td>{{$producto->descripcion}}</td>
     <td> {{ $producto->created_at->format('d-m-y')}}</td>
     <td> {{ $producto->updated_at->format('d-m-y')}}</td>
-    <td>
+
+
+    <td class="row align-items-start p-1">
       
-      <a href="{{ route('productos.show',$producto->id)}}" class="btn btn-secondary">Ver</a>
+     
+
+
+      
+      <a href="{{ route('productos.show',$producto->id)}}" >
+        <button class="btn btn-secondary">
+          Ver
+        </button>
+      </a>
+
+
 
       <a href="{{ route('productos.edit',$producto->id)}}">
         <button class="btn btn-primary ml-2">
@@ -38,6 +50,13 @@
         </button>
         </a>
 
+        
+        <form action="{{route('productos.destroy', $producto ->id)}}" method="post">
+          @method('DELETE')
+          @csrf
+          <button type="submit" class="btn btn-danger ml-2">Eliminar</button>
+        </form>
+  
 
     </td>
     </tr>

@@ -101,6 +101,10 @@ class ProveedorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $proveedor = Proveedor::find($id);
+
+        $proveedor->delete();
+        
+        return back()->with('status', 'PROVEEDOR ELIMINADO CON EXITO');
     }
 }

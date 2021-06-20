@@ -100,6 +100,10 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cliente = Cliente::find($id);
+
+        $cliente->delete();
+        
+        return back()->with('status', 'CLIENTE ELIMINADO CON EXITO');
     }
 }
