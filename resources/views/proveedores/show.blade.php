@@ -47,7 +47,13 @@
             <input readonly class="form-control" type="text" name="direccion" id="direccion" value="{{ $proveedor->direccion}}">
         </div>
 
-        
+        <div class="container-fluid text-center">
+            <a href="{{route('proveedores.index')}}">
+                <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+              </a>
+     
+        </div>
+       
     
     
         

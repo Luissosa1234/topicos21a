@@ -24,10 +24,10 @@ class StoreClientePost extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=> 'required|min:5|max:500',
-            'correo'=> 'required|min:5|max:500',
-            'telefono'=> 'required|min:5|max:500',
-            'direccion'=> 'required|min:5|max:500'
+            'nombre'=> 'required|min:5|max:100',
+            'correo'=> 'email:rfc,dns',
+            'telefono'=> 'required|numeric',
+            'direccion'=> 'required|min:5|max:200'
         ];
     }
 }

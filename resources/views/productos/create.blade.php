@@ -10,7 +10,7 @@
 <div class="container">
 
     <div class="container-fluid text-center">
-        <h1>Ventas</h1>
+        <h1>AGREGAR PRODUCTO</h1>
         @include('layouts.session')
     </div>
 
@@ -23,12 +23,10 @@
           
          @include('productos._form')
 
-       
-        
-             <input type="submit" value="Enviar">
-          <input type="submit" value="Enviar">
            </form>
-
+           <a href="{{route('productos.index')}}">
+            <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+          </a>
 
 </div>
 @endsection

@@ -4,13 +4,14 @@
 
 
 
-
 @section('content')
 
-<div class="container">
+   <div class="container">
 
-    <div class="container-fluid text-center">
-        <h1>Ventas</h1>
+    <div class="container-fluid text-center ">
+      
+       
+       <h1>ACTUALIZAR VENTA: {{ $venta->name}}  </h1>
         @include('layouts.session')
     </div>
 
@@ -23,9 +24,13 @@
               @include('ventas._form')
           
 
-          <input type="submit" value="Enviar">
+               
            </form>
-
-
+           <a href="{{route('ventas.index')}}">
+            <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+          </a>
+     
+        </div>
+      
 </div>
 @endsection

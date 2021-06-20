@@ -18,6 +18,6 @@
                 <input id="password" type="password" class="form-control" name="password" autocomplete="new-password" value="{{old('nombre',$user->password)}}">
         </div>
     
-        <input type="submit" value="Enviar">
+        <input  type="submit" value="Enviar" class="btn btn-outline-primary btn-lg">
 
 

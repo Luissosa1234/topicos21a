@@ -48,7 +48,13 @@
         </div>
 
         
-    
+        <div class="container-fluid text-center">
+            <a href="{{route('ventas.index')}}">
+                <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+              </a>
+     
+        </div>
+       
    
 
 

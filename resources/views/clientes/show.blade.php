@@ -8,7 +8,7 @@
 @section('content')
 <div class="container">
     <div class="container-fluid text-center">
-        <h1>CLIENTE</h1>
+        <h1>CLIENTE </h1>
         @include('layouts.session')
     </div>
 
@@ -19,7 +19,7 @@
         @csrf --}}
          
         
-
+       
         <div class="form-group">
             <label for="title">Nombre</label>
             <input value="{{ $cliente->nombre}}" readonly class="form-control" type="text" name="name" id="name" >
@@ -52,7 +52,9 @@
         
     
     
-        <input type="submit" value="Enviar">
+        <a href="{{route('clientes.index')}}">
+            <button class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+          </a>
     {{-- </form> --}}
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.pLogin_registros')
+@extends('layouts.plogin_registros')
 
 
 
@@ -10,7 +10,7 @@
 <div class="container">
 
     <div class="container-fluid text-center">
-        <h1>CLIENTE</h1>
+        <h1>AGREGAR CLIENTE</h1>
         @include('layouts.session')
     </div>
 
@@ -23,6 +23,9 @@
          
            </form>
 
-
+           <a href="{{route('clientes.index')}}">
+            <button class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+          </a>
+          
 </div>
 @endsection

@@ -62,7 +62,13 @@
             <input readonly class="form-control" type="text" name="actualizacion" id="actualizacion" value="{{ $producto->updated_at->format('d-m-y')}}">
         </div>
 
-        
+        <div class="container-fluid text-center">
+            <a href="{{route('productos.index')}}">
+                <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+              </a>
+     
+        </div>
+       
     {{-- </form> --}}
 
 

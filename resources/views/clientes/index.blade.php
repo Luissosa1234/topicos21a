@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-  <h2>Lista de Clientes <a href="clientes/create"> <button type="button" class="btn btn-success float-right">Agregar Cliente</button></a> </h2> 
+  <h2>Lista de Clientes <a href="clientes/create"> <button type="button" style="width: 150px;"  class="btn btn-outline-success  float-right">Agregar Cliente</button></a> </h2> 
 <table class="table table-hover">
     <thead>
   <tr>
@@ -32,13 +32,13 @@
         
 
         <a href="{{ route('clientes.show',$cliente->id)}}" >
-          <button class="btn btn-secondary">
+          <button class="btn btn-outline-secondary">
             Ver
           </button>
         </a>
 
         <a href="{{ route('clientes.edit',$cliente->id)}}">
-          <button class="btn btn-primary ml-2">
+          <button class="btn btn-outline-primary ml-2">
             Actualizar
           </button>
           </a>
@@ -46,7 +46,7 @@
           <form action="{{route('clientes.destroy', $cliente ->id)}}" method="post">
             @method('DELETE')
             @csrf
-            <button type="submit" class="btn btn-danger ml-2">Eliminar</button>
+            <button type="submit" class="btn btn-outline-danger ml-2">Eliminar</button>
           </form>
     
       </td>

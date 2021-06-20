@@ -20,11 +20,14 @@
             <form action="{{route("ventas.store")}}" method="post">
             
               @include('ventas._form')
-          
-
-          <input type="submit" value="Enviar">
+        
            </form>
 
-
+           
+            <a href="{{route('ventas.index')}}">
+                <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+              
+     
+        </div>
 </div>
 @endsection

@@ -10,7 +10,7 @@
 <div class="container">
 
     <div class="container-fluid text-center">
-        <h1>CLIENTE</h1>
+        <h1>EDITAR PROVEEDOR: {{ $proveedor->nombre}}</h1>
         @include('layouts.session')
     </div>
 
@@ -23,7 +23,9 @@
             @include('proveedores._form')
          
            </form>
-
+           <a href="{{route('proveedores.index')}}">
+            <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+          </a>
 
 </div>
 @endsection

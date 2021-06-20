@@ -38,9 +38,14 @@
                 <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password" value="{{ $user->name}}">
         </div> --}}
     
-    
- 
-
+        <div class="container-fluid text-center">
+            <a href="{{route('usuarios.index')}}">
+                <button  class="btn btn-outline-danger btn-lg justify-content-end mt-5">Regresar</button>
+              </a>
+     
+        </div>
+       
+        
 
 </div>
 @endsection

@@ -40,14 +40,14 @@
                     </li>
                 </ul>
 
-
-                <ul class="navbar-nav ml-auto">
-                  
- 
-                        <a class="nav-link btn btn-primary text-white"  href="/">
-                            <i>Regresar</i> </a>
+    {{-- 
+                    <ul class="navbar-nav ml-auto">
                     
-                </ul>
+    
+                            <a class="nav-link btn btn-primary text-white"  href="/">
+                                <i>Regresar</i> </a>
+                        
+                    </ul> --}}
                </nav>
            
 
