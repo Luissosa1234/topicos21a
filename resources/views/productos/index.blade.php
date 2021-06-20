@@ -30,7 +30,15 @@
     <td> {{ $producto->updated_at->format('d-m-y')}}</td>
     <td>
       
-      <a href="{{ route('productos.show',$producto->id)}}" class="btn btn-primary">Ver</a>
+      <a href="{{ route('productos.show',$producto->id)}}" class="btn btn-secondary">Ver</a>
+
+      <a href="{{ route('productos.edit',$producto->id)}}">
+        <button class="btn btn-primary ml-2">
+          Actualizar
+        </button>
+        </a>
+
+
     </td>
     </tr>
      @endforeach

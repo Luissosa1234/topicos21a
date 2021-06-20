@@ -1,4 +1,4 @@
-@extends('layouts.plogin_registros')
+@extends('layouts.pLogin_registros')
 
 
 
@@ -17,15 +17,12 @@
              {{-- vista para validar errores con el include --}}
              @include('layouts/error')
 
-          <form action="{{route("productos.store")}}" method="post">
-             @csrf
-    
+             <form action="{{route("ventas.update",$venta->id)}}" method="post">
+                @method('PUT')
+            
+              @include('ventas._form')
           
-         @include('productos._form')
 
-       
-        
-             <input type="submit" value="Enviar">
           <input type="submit" value="Enviar">
            </form>
 

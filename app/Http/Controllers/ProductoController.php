@@ -31,7 +31,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create');
+        return view('productos.create',['producto' => new Producto()]);
     }
 
     /**
@@ -42,11 +42,11 @@ class ProductoController extends Controller
      */
     public function store(StoreProductoPost $request)
     {
-        echo "hola mundo: ".$request->input('nombre');
-        echo "hola mundo: ".$request->input('precio');
-        echo "hola mundo: ".$request->input('cantidad');
-        echo "hola mundo: ".$request->input('departamento');
-        echo "hola mundo: ".$request->input('descripcion');
+        // echo "hola mundo: ".$request->input('nombre');
+        // echo "hola mundo: ".$request->input('precio');
+        // echo "hola mundo: ".$request->input('cantidad');
+        // echo "hola mundo: ".$request->input('departamento');
+        // echo "hola mundo: ".$request->input('descripcion');
         
 
         Producto::create($request->validated());
@@ -75,7 +75,8 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $producto = Producto::find($id);
+        return view('productos.edit',['producto' => $producto]);
     }
 
     /**
@@ -85,9 +86,14 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProductoPost $request, $id)
     {
-        //
+        $producto = Producto::find($id);
+
+    
+        $producto->update($request->validated());
+
+        return back()->with('status', 'PRODUCTO ACTUALIZADO CON EXITO');
     }
 
     /**

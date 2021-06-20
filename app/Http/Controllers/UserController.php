@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        return view('usuarios.create',['user' => new User()]);
     }
 
     /**
@@ -37,9 +37,9 @@ class UserController extends Controller
     public function store(StoreUserPost $request)
     {
         //
-        echo "hola mundo: ".$request->input('name');
-        echo "hola mundo: ".$request->input('email');
-        echo "hola mundo: ".$request->input('password');
+        // echo "hola mundo: ".$request->input('name');
+        // echo "hola mundo: ".$request->input('email');
+        // echo "hola mundo: ".$request->input('password');
 
         User::create($request->validated());
 
@@ -66,9 +66,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)   
     {
-        //
+
+        $user = User::find($id);
+        return view('usuarios.edit',['user' => $user]);
+        
     }
 
     /**
@@ -78,9 +81,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreUserPost $request, $id)
     {
-        //
+
+        $user = User::find($id);
+
+    
+        $user->update($request->validated());
+
+        return back()->with('status', 'USUARIO ACTUALIZADO CON EXITO');
+ 
+
+      
     }
 
     /**
@@ -91,6 +103,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $user = User::find($id);
+
+        $user->delete();
+        
+        return back()->with('status', 'USUARIO ELIMINADO CON EXITO');
     }
 }

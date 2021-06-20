@@ -23,7 +23,13 @@
     <td>{{$proveedor->telefono}}</td>
     <td>{{$proveedor->direccion}}</td>
     <td>
-      <a href="{{ route('proveedores.show',$proveedor->id)}}" class="btn btn-primary">Ver</a>
+      <a href="{{ route('proveedores.show',$proveedor->id)}}" class="btn btn-secondary">Ver</a>
+
+      <a href="{{ route('proveedores.edit',$proveedor->id)}}">
+        <button class="btn btn-primary ml-2">
+          Actualizar
+        </button>
+        </a>
     </td>
   </tr>
   @endforeach

@@ -15,10 +15,12 @@
 {{-- vista para validar errores con el include --}}
 @include('layouts/error')
 
-<form action="{{route("usuarios.store")}}" method="post">
-    
+
+<form action="{{route("usuarios.update",$user->id)}}" method="post">
+   @method('PUT')
    @include('usuarios._form')
 </form>
+
 
 </div>
 @endsection

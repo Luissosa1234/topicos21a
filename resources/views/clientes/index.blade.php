@@ -25,8 +25,14 @@
     <td>{{$cliente->direccion}}</td>
     <td>
       <td>
-        <a href="{{ route('clientes.show',$cliente->id)}}" class="btn btn-primary">Ver</a>
-        {{-- <a href="{{ route('usuarios.edit',$user->id)}}" class="btn btn-primary">Actualizar</a> --}}
+        <a href="{{ route('clientes.show',$cliente->id)}}" class="btn btn-secondary">Ver</a>
+        
+
+        <a href="{{ route('clientes.edit',$cliente->id)}}">
+          <button class="btn btn-primary ml-2">
+            Actualizar
+          </button>
+          </a>
       </td>
     </td>
   </tr>

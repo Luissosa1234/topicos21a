@@ -19,9 +19,34 @@
     <th scope="row">{{$user->id}}</th>
     <td>{{$user->name}}</td>
     <td>{{$user->email}}</td>
-    <td>
-      <a href="{{ route('usuarios.show',$user->id)}}" class="btn btn-primary">Ver</a>
-      <a href="{{ route('usuarios.edit',$user->id)}}" class="btn btn-primary">Actualizar</a>
+
+
+    {{-- botones --}}
+    <td class="row align-items-start p-1">
+
+      
+      <a href="{{ route('usuarios.show',$user->id)}}" >
+        <button class="btn btn-secondary ml-2">
+          Ver
+        </button>
+      </a>
+        
+
+      <a href="{{ route('usuarios.edit',$user->id)}}">
+        <button class="btn btn-primary ml-2">
+          Actualizar
+        </button>
+        </a>
+            
+      
+
+      <form action="{{route('usuarios.destroy', $user ->id)}}" method="post">
+        @method('DELETE')
+        @csrf
+        <button type="submit" class="btn btn-danger ml-2">Eliminar</button>
+      </form>
+
+
     </td>
   </tr>
   @endforeach

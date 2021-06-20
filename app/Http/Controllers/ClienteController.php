@@ -27,7 +27,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        return view('clientes.create',['user' => new User()]);
     }
 
     /**
@@ -38,10 +38,10 @@ class ClienteController extends Controller
      */
     public function store(StoreClientePost $request)
     {
-        echo "hola mundo: ".$request->input('nombre');
-        echo "hola mundo: ".$request->input('correo');
-        echo "hola mundo: ".$request->input('telefono');
-        echo "hola mundo: ".$request->input('direccion');
+        // echo "hola mundo: ".$request->input('nombre');
+        // echo "hola mundo: ".$request->input('correo');
+        // echo "hola mundo: ".$request->input('telefono');
+        // echo "hola mundo: ".$request->input('direccion');
 
         Cliente::create($request->validated());
 
@@ -71,7 +71,8 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cliente = Cliente::find($id);
+        return view('clientes.edit',['cliente' => $cliente]);
     }
 
     /**
@@ -81,9 +82,14 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreClientePost $request, $id)
     {
-        //
+        $cliente = Cliente::find($id);
+
+    
+        $cliente->update($request->validated());
+
+        return back()->with('status', 'CLIENTE ACTUALIZADO CON EXITO');
     }
 
     /**

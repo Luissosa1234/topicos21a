@@ -5,7 +5,6 @@
 
 
 
-
 @section('content')
 
 <div class="container">
@@ -18,9 +17,10 @@
              {{-- vista para validar errores con el include --}}
              @include('layouts/error')
 
-            <form action="{{route("proveedores.store")}}" method="post">
-             
-            @include('proveedores._form')
+            <form action="{{route("clientes.update",$cliente->id)}}" method="post">
+                @method('PUT')
+
+            @include('clientes._form')
          
            </form>
 

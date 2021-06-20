@@ -28,7 +28,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('ventas.create');
+        return view('ventas.create',['venta' => new Venta()]);
     }
 
     /**
@@ -39,9 +39,9 @@ class VentaController extends Controller
      */
     public function store(StoreVentaPost $request)
     {
-        echo "hola mundo: ".$request->input('nombre');
-        echo "hola mundo: ".$request->input('cantidad');
-        echo "hola mundo: ".$request->input('precio');
+        // echo "hola mundo: ".$request->input('nombre');
+        // echo "hola mundo: ".$request->input('cantidad');
+        // echo "hola mundo: ".$request->input('precio');
   
         
 
@@ -70,7 +70,8 @@ class VentaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $venta = Venta::find($id);
+        return view('ventas.edit',['venta' => $venta]);
     }
 
     /**
@@ -80,9 +81,13 @@ class VentaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreVentaPost $request, $id)
     {
-        //
+        $venta = Venta::find($id);
+    
+        $venta->update($request->validated());
+
+        return back()->with('status', 'CLIENTE ACTUALIZADO CON EXITO');
     }
 
     /**

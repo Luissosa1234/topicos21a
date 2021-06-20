@@ -30,7 +30,7 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        return view('proveedores.create');
+        return view('proveedores.create',['proveedor' => new Proveedor()]);
     }
 
     /**
@@ -72,7 +72,8 @@ class ProveedorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proveedor = Proveedor::find($id);
+        return view('proveedores.edit',['proveedor' => $proveedor]);
     }
 
     /**
@@ -82,9 +83,14 @@ class ProveedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProveedorPost $request, $id)
     {
-        //
+        $proveedor = Proveedor::find($id);
+
+    
+        $proveedor->update($request->validated());
+
+        return back()->with('status', 'PROVEEDOR ACTUALIZADO CON EXITO');
     }
 
     /**
