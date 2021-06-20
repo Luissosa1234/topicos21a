@@ -23,8 +23,7 @@
     <td>{{$venta->precio}}</td>
     <td> {{ $venta->created_at->format('d-m-y')}}</td>
     <td>
-      <button type="button" class="btn btn-primary">Editar</button>
-      <button type="button" class="btn btn-danger">Eliminar</button>
+      <a href="{{ route('ventas.show',$venta->id)}}" class="btn btn-primary">Ver</a>
     </td>
   </tr>
   @endforeach

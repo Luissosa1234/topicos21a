@@ -23,8 +23,7 @@
     <td>{{$proveedor->telefono}}</td>
     <td>{{$proveedor->direccion}}</td>
     <td>
-      <button type="button" class="btn btn-primary">Editar</button>
-      <button type="button" class="btn btn-danger">Eliminar</button>
+      <a href="{{ route('proveedores.show',$proveedor->id)}}" class="btn btn-primary">Ver</a>
     </td>
   </tr>
   @endforeach

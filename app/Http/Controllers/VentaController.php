@@ -58,7 +58,8 @@ class VentaController extends Controller
      */
     public function show($id)
     {
-        //
+        $ventas = Venta::find($id);
+        return view('ventas.show',['ventas' => $ventas]);
     }
 
     /**

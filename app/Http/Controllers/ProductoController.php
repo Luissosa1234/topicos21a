@@ -62,7 +62,9 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto = Producto::find($id);
+
+        return view('productos.show',['producto' => $producto]);
     }
 
     /**

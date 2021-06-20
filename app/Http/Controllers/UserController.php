@@ -54,7 +54,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+         
+        $user = User::find($id);
+
+        return view('usuarios.show',['user' => $user]);
     }
 
     /**
@@ -63,7 +66,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
     }

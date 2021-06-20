@@ -20,8 +20,8 @@
     <td>{{$user->name}}</td>
     <td>{{$user->email}}</td>
     <td>
-      <button type="button" class="btn btn-primary">Editar</button>
-      <button type="button" class="btn btn-danger">Eliminar</button>
+      <a href="{{ route('usuarios.show',$user->id)}}" class="btn btn-primary">Ver</a>
+      <a href="{{ route('usuarios.edit',$user->id)}}" class="btn btn-primary">Actualizar</a>
     </td>
   </tr>
   @endforeach

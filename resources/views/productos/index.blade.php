@@ -29,8 +29,8 @@
     <td> {{ $producto->created_at->format('d-m-y')}}</td>
     <td> {{ $producto->updated_at->format('d-m-y')}}</td>
     <td>
-      <button type="button" class="btn btn-primary">Editar</button>
-      <button type="button" class="btn btn-danger">Eliminar</button>
+      
+      <a href="{{ route('productos.show',$producto->id)}}" class="btn btn-primary">Ver</a>
     </td>
     </tr>
      @endforeach

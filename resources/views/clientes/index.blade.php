@@ -24,8 +24,10 @@
     <td>{{$cliente->telefono}}</td>
     <td>{{$cliente->direccion}}</td>
     <td>
-      <button type="button" class="btn btn-primary">Editar</button>
-      <button type="button" class="btn btn-danger">Eliminar</button>
+      <td>
+        <a href="{{ route('clientes.show',$cliente->id)}}" class="btn btn-primary">Ver</a>
+        {{-- <a href="{{ route('usuarios.edit',$user->id)}}" class="btn btn-primary">Actualizar</a> --}}
+      </td>
     </td>
   </tr>
   @endforeach
